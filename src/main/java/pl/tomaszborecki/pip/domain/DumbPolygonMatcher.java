@@ -9,13 +9,15 @@ import org.geotools.factory.CommonFactoryFinder;
 import org.locationtech.jts.geom.Point;
 import org.opengis.filter.Filter;
 import org.opengis.filter.FilterFactory2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import lombok.extern.slf4j.Slf4j;
 import pl.tomaszborecki.pip.domain.model.PointInPolygon;
 
-@Slf4j
 public class DumbPolygonMatcher implements PolygonMatcher {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(DumbPolygonMatcher.class);
+	
   SimpleFeatureSource featureSource;
 
   public void init(SimpleFeatureSource featureSource) throws IOException {
